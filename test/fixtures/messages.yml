@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fromUserId: 1
+  toUserId: 1
+  title: MyString
+  body: MyString
+  is_read: false
+  created_at: 2013-09-19 11:13:29
+
+two:
+  fromUserId: 1
+  toUserId: 1
+  title: MyString
+  body: MyString
+  is_read: false
+  created_at: 2013-09-19 11:13:29

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fromuserid:</b>
+  <%= @message.fromUserId %>
+</p>
+
+<p>
+  <b>Touserid:</b>
+  <%= @message.toUserId %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @message.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @message.body %>
+</p>
+
+<p>
+  <b>Is read:</b>
+  <%= @message.is_read %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @message.created_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_message_path(@message) %> |
+<%= link_to 'Back', messages_path %>

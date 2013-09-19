@@ -1,4 +1,11 @@
 Inmail::Application.routes.draw do
+  
+
+  resources :messages
+
+
+  root :to => 'static_page#index'
+
   devise_for :users
 
   # The priority is based upon order of creation:
