@@ -1,0 +1,19 @@
+== Welcome to InMail
+
+This is a Rails internal mail App
+
+
+== Description
+
+User can Registry and send emails for each other internally 
+The App is still under development
+
+== Gems Used
+
+Devise
+Simple_form
+Papper_clip
+
+== About
+
+...
