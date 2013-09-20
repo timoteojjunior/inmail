@@ -22,20 +22,52 @@
 
   <body>
 
+<nav class="top-bar">
+	<ul class="title-area">
+		<li class="name"><h1><a href="#">InMail</a></h1></li>
+
+	</ul>
+
+	<section class="top-bar-section">
+		<ul class="left">
+			<li class="divider"></li>
+			<li class="active"><a href="#">Users</a></li>
+		</ul>
+	</section>
+
+	<section class="top-bar-section">
+		<ul class="right">
+			<% if user_signed_in? %>
+				<li><%= link_to current_user.email, edit_user_registration_path %></li>
+				<li><%= link_to "Logout", destroy_user_session_path, method: :delete  %></li>
+			<% else %>
+				<li><%= link_to "Register", new_user_registration_path %></li>
+				<li><%= link_to "Login", user_session_path %></li>
+			<% end %>
+		</ul>
+	</section>
+
+</nav>
 
   	<div class="row">
   		<div class="large-12 columns">
-			<%= link_to "Login", user_session_path %> |
-			<%= link_to "Logout", destroy_user_session_path, method: :delete  %> 
+			<p class="notice"><%= notice %></p>
+       		<p class="alert"><%= alert %></p>
 		</div>
 	</div>
 
   	<div class="row">
-		<div class="large-12 columns">
-	 		<p class="notice"><%= notice %></p>
-       		<p class="alert"><%= alert %></p>
-		
+  		<div class="large-3 columns">
+  			<br>
+  			
 
+  			<button class="secondary radius"><%= link_to "New Email", new_message_path %></button>
+  			<br>
+  			<br>
+  			<%= render 'locations/location' %>
+  		</div>
+		<div class="large-9 columns">
+	 		
     	<%= yield %>
     	</div>
 	</div>

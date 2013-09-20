@@ -25,9 +25,9 @@ class MessagesController < ApplicationController
   # GET /messages/new.json
   def new
     @message = Message.new
-
-    @message.fromUserId = @user.id
-
+    @message.user_id = current_user.id
+    @message.is_read = false
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @message }

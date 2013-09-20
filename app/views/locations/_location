@@ -1,0 +1,14 @@
+<% @locations = Location.all%>
+
+<table>
+  <tr>
+    <th>Locations</th>
+    
+  </tr>
+
+<% @locations.each do |location| %>
+  <tr>
+    <td><%= location.name %></td>
+  </tr>
+<% end %>
+</table>
