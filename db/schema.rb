@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130919091329) do
+ActiveRecord::Schema.define(:version => 20130920090710) do
+
+  create_table "locations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "messages", :force => true do |t|
     t.integer  "fromUserId"
@@ -19,8 +25,12 @@ ActiveRecord::Schema.define(:version => 20130919091329) do
     t.string   "title"
     t.string   "body"
     t.boolean  "is_read"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "users", :force => true do |t|

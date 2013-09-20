@@ -10,15 +10,16 @@
       </ul>
     </div>
   <% end %>
-
   
     
-    <%= select("message", "fromUserId", User.all.collect{|p| [p.email,p.id]})%>
+ 
 
     <%= select("message", "toUserId", User.all.collect{|p| [p.email,p.id]})%>
    
   <%= f.input :title %>
   <%= f.input :body, as: :text %>
+  <%= f.input :attachment, :as => :file%>
+   <%= f.button :submit %>
   
 
 <% end %>

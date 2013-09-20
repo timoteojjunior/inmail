@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'nested_form'
 gem 'devise'
 gem 'simple_form'
+gem 'paperclip', '~> 3.0'
 
 
 # Gems used only for assets and not required
@@ -21,6 +22,9 @@ group :assets do
    gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'compass-rails' # you need this or you get an err
+  gem 'zurb-foundation', '~> 4.0.0'
 end
 
 gem 'jquery-rails'
