@@ -1,6 +1,10 @@
 Inmail::Application.routes.draw do
   
 
+  #get "messages/sentmail"
+  
+  match 'sentmail', to: 'messages#sentmail', via: 'get'
+
   resources :locations
 
 

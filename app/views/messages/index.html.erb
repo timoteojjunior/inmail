@@ -1,29 +1,14 @@
 <h1>Listing messages</h1>
 
 <table>
-  <tr>
-    <th>Fromuserid</th>
-    <th>Touserid</th>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Is read</th>
-    <th>Created at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  
 
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.user_id %></td>
-    <td><%= message.toUserId %></td>
-    <td><%= message.title %></td>
-    <td><%= message.body %></td>
-    <td><%= message.is_read %></td>
-    <td><%= message.created_at %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td width="200px"><%= link_to message.title, message %></td>
+    <td width="600px"><%= message.body %></td>
+    <td width="100px"><%= message.created_at.strftime("%b, %d") %></td>
+    
   </tr>
 <% end %>
 </table>

@@ -64,13 +64,37 @@
   			<button class="secondary radius"><%= link_to "New Email", new_message_path %></button>
   			<br>
   			<br>
-  			<%= render 'locations/location' %>
+  			
+        <%= link_to "Inbox", messages_path %>
+        <br>
+        <%= link_to "Sent Mail", sentmail_path %>
+
+
   		</div>
 		<div class="large-9 columns">
 	 		
     	<%= yield %>
     	</div>
 	</div>
+
+
+<hr>
+<!-- Footer
+    ================================================== -->
+    <div class="row">
+
+        <div class="large-12 columns">
+              <footer >
+                <center>
+                  &copy InMail develoved by <a href="http://timoteojjunior.wordpress.com/">Timóteo Júnior</a> and Guimarães Júnior
+                  <p>Powered by <a href="http://foundation.zurb.com/">Foundation</a></p>
+                </center>
+      
+             </footer>
+        </div>
+    </div>
+    
+
     
     <%= javascript_include_tag "application" %>
   </body>

@@ -2,7 +2,22 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    # @messages = Message.all
+     
+    @messages = Message.where(:toUserId => current_user.id)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @messages }
+    end
+  end
+
+# GET /messages
+  # GET /messages.json
+  def sentmail
+    # @messages = Message.all
+     
+    @messages = Message.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,7 +41,7 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
     @message.user_id = current_user.id
-    @message.is_read = false
+    @message.location_id = 1
     
     respond_to do |format|
       format.html # new.html.erb

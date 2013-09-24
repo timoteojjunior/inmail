@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Fromuserid:</b>
-  <%= @message.user_id %>
+  <b>From:</b>
+  <%= @message.user.email %>
 </p>
 
 <p>
-  <b>Touserid:</b>
-  <%= @message.toUserId %>
+  <b>To:</b>
+  <%= User.find(@message.toUserId).email %>
 </p>
 
 <p>
@@ -16,18 +16,17 @@
 </p>
 
 <p>
-  <b>Body:</b>
-  <%= @message.body %>
+  <div class="panel">
+    <%= @message.body %>
+  </div>
+  
 </p>
 
-<p>
-  <b>Is read:</b>
-  <%= @message.is_read %>
-</p>
+
 
 <p>
-  <b>Created at:</b>
-  <%= @message.created_at %>
+  <b>Date:</b>
+  <%= @message.created_at.strftime("%B %d, %Y") %>
 </p>
 
 
