@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :index, :sentmail]
   # GET /messages
   # GET /messages.json
   def index
@@ -12,7 +13,7 @@ class MessagesController < ApplicationController
     end
   end
 
-# GET /messages
+  # GET /messages
   # GET /messages.json
   def sentmail
     # @messages = Message.all
