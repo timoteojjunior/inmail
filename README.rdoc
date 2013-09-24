@@ -13,6 +13,7 @@ The App is still under development
 Devise
 Simple_form
 Papper_clip
+Foundation
 
 == About
 

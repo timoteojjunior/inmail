@@ -2,10 +2,19 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+group :development do
+  gem 'sqlite3', '1.3.5'
+  #gem 'sunspot_solr'
+end
+
+group :production do
+  gem 'pg'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'nested_form'
 gem 'devise'
 gem 'simple_form'
@@ -28,6 +37,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
