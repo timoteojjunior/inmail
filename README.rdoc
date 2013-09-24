@@ -1,6 +1,6 @@
 == Welcome to InMail
 
-This is a Rails internal mail App
+This is a Rails internal mail Appde
 
 
 == Description
@@ -15,6 +15,6 @@ Simple_form
 Papper_clip
 Foundation
 
-== About
+== Demo
 
-...
+inmail.herokuapp.com

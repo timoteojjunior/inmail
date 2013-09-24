@@ -13,7 +13,7 @@
   
     
  
-  
+  To:
     <%= select("message", "toUserId", User.all.collect{|p| [p.email,p.id]})%>
   <%= f.association :user, as: :hidden %>
   <%= f.input :title %>
