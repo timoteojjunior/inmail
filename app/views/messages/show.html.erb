@@ -22,13 +22,18 @@
   
 </p>
 
-
-
 <p>
   <b>Date:</b>
   <%= @message.created_at.strftime("%B %d, %Y") %>
 </p>
 
 
-<%= link_to 'Edit', edit_message_path(@message) %> |
+<a href="#" data-reveal-id="modal01" >Reply</a> |
 <%= link_to 'Back', messages_path %>
+
+<div id="modal01" class="reveal-modal">
+    <h3>Reply</h3>
+    <%= render 'reply' %>
+    <a href="" class="button">Cancel</a>
+    <a class="close-reveal-modal">&times;</a>
+</div>

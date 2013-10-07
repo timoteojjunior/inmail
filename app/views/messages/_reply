@@ -1,0 +1,26 @@
+
+<%= simple_form_for(@reply) do |f| %>
+  <% if @reply.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+
+      <ul>
+      <% @reply.errors.full_replys.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  To: <%= @message.user.email %>  </br>
+  <%= f.association :user, as: :hidden %>
+  <%= f.input :title %>
+  <%= f.input :parentId, as: :hidden %>
+  <%= f.input :toUserId, as: :hidden %>
+  <%= f.input :user_id, as: :hidden %>
+  <%= f.input :body, as: :text %>
+  <%= f.input :attachment, :as => :file%>
+  <%= f.button :submit %>
+
+<% end %>

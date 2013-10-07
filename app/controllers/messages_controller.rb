@@ -29,9 +29,22 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    puts "-"*50
     @message = Message.find(params[:id])
+    @reply =  Message.new 
+    @reply.parentId = @message.id
 
-    respond_to do |format|
+    if @message.user_id == current_user.id
+        @reply.toUserId = @message.toUserId
+        @reply.user_id = @message.user_id 
+    else
+        @reply.toUserId = @message.user_id 
+        @reply.user_id = @message.toUserId
+    end
+
+    @reply.title = "RE:"+@message.title
+    
+        respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @message }
     end
@@ -62,7 +75,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
+        format.html { redirect_to action: "index", notice: 'Message was successfully created.' }
         format.json { render json: @message, status: :created, location: @message }
       else
         format.html { render action: "new" }

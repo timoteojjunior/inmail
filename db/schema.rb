@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130920130127) do
+ActiveRecord::Schema.define(:version => 20131007191001) do
 
   create_table "locations", :force => true do |t|
     t.string   "name"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130920130127) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "location_id"
+    t.integer  "parentId"
   end
 
   create_table "users", :force => true do |t|
